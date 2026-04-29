@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cuestionario para Familias · Educación Infantil</title>
+  <meta name="description" content="Cuestionario de inicio de curso para las familias del aula de Educación Infantil. Comparte tus experiencias y expectativas con nosotras." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Decorative blobs -->
+  <div class="blob blob-1" aria-hidden="true"></div>
+  <div class="blob blob-2" aria-hidden="true"></div>
+  <div class="blob blob-3" aria-hidden="true"></div>
+
+  <main class="page-wrapper">
+
+    <!-- ── HERO HEADER ── -->
+    <header class="hero" role="banner">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Curso 2025 – 2026
+      </div>
+      <div class="hero-icon" aria-hidden="true">🌟</div>
+      <h1 class="hero-title">Cuestionario para Familias</h1>
+      <p class="hero-subtitle">
+        Vuestra opinión es lo más importante para nosotras.<br />
+        Juntas construimos el mejor inicio de curso para vuestros peques. 💜
+      </p>
+      <div class="hero-divider" aria-hidden="true"></div>
+    </header>
+
+    <!-- ── FORM ── -->
+    <form id="survey-form" class="survey-form" novalidate>
+
+      <!-- ── PARTE 1 ── -->
+      <section class="form-section" id="parte-1" aria-labelledby="parte1-title">
+        <div class="section-header">
+          <span class="section-number" aria-hidden="true">01</span>
+          <div class="section-header-text">
+            <span class="section-label">Parte primera</span>
+            <h2 class="section-title" id="parte1-title">
+              ¿Qué tal han sido las anteriores experiencias educativas?
+            </h2>
+          </div>
+        </div>
+
+        <fieldset class="choice-group" aria-required="true">
+          <legend class="sr-only">Selecciona cómo han sido las experiencias educativas previas</legend>
+
+          <label class="choice-card" for="opt-bien" id="label-bien">
+            <input class="choice-input" type="radio" name="experiencia" id="opt-bien" value="bien" required />
+            <span class="choice-icon">😊</span>
+            <span class="choice-text">Bien</span>
+            <span class="choice-check" aria-hidden="true"></span>
+          </label>
+
+          <label class="choice-card" for="opt-regular" id="label-regular">
+            <input class="choice-input" type="radio" name="experiencia" id="opt-regular" value="regular" />
+            <span class="choice-icon">😐</span>
+            <span class="choice-text">Regular</span>
+            <span class="choice-check" aria-hidden="true"></span>
+          </label>
+
+          <label class="choice-card" for="opt-mal" id="label-mal">
+            <input class="choice-input" type="radio" name="experiencia" id="opt-mal" value="mal" />
+            <span class="choice-icon">😔</span>
+            <span class="choice-text">Mal</span>
+            <span class="choice-check" aria-hidden="true"></span>
+          </label>
+        </fieldset>
+
+        <!-- Error mensaje parte 1 -->
+        <div class="field-error-msg" id="error-experiencia" role="alert" aria-live="polite" hidden>
+          <span class="error-icon" aria-hidden="true">⚠️</span>
+          <span>Por favor, selecciona cómo han sido las experiencias educativas anteriores.</span>
+        </div>
+
+        <div class="textarea-group">
+          <label class="textarea-label" for="justificacion">
+            <span class="label-icon" aria-hidden="true">✏️</span>
+            ¿Queréis añadir algún comentario? <span class="optional">(opcional)</span>
+          </label>
+          <textarea
+            id="justificacion"
+            name="justificacion"
+            class="textarea-field"
+            rows="4"
+            placeholder="Podéis contarnos con detalle vuestra experiencia anterior…"
+            maxlength="600"
+          ></textarea>
+          <span class="char-count" id="char-count-1">0 / 600</span>
+        </div>
+      </section>
+
+      <!-- ── PARTE 2 ── -->
+      <section class="form-section" id="parte-2" aria-labelledby="parte2-title">
+        <div class="section-header">
+          <span class="section-number" aria-hidden="true">02</span>
+          <div class="section-header-text">
+            <span class="section-label">Parte segunda</span>
+            <h2 class="section-title" id="parte2-title">
+              ¿Qué esperáis de nosotras este curso?
+            </h2>
+          </div>
+        </div>
+
+        <div class="textarea-group">
+          <label class="textarea-label" for="expectativas">
+            <span class="label-icon" aria-hidden="true">💬</span>
+            Vuestras expectativas
+          </label>
+          <textarea
+            id="expectativas"
+            name="expectativas"
+            class="textarea-field"
+            rows="5"
+            placeholder="Contadnos qué esperáis de nosotras, qué os gustaría que trabajáramos, cómo podemos ayudar a vuestros hijos e hijas…"
+            maxlength="800"
+            required
+          ></textarea>
+          <span class="char-count" id="char-count-2">0 / 800</span>
+
+          <!-- Error mensaje parte 2 -->
+          <div class="field-error-msg" id="error-expectativas" role="alert" aria-live="polite" hidden>
+            <span class="error-icon" aria-hidden="true">⚠️</span>
+            <span>Por favor, cuéntanos qué esperáis de nosotras este curso.</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── SUBMIT ── -->
+      <div class="submit-wrapper">
+        <button type="submit" id="submit-btn" class="submit-btn">
+          <span class="submit-text">Enviar cuestionario</span>
+          <span class="submit-icon" aria-hidden="true">💜</span>
+        </button>
+        <p class="submit-note">Vuestras respuestas son anónimas y se tratarán con total confidencialidad.</p>
+      </div>
+
+    </form>
+
+    <!-- ── SUCCESS MESSAGE ── -->
+    <div class="success-card" id="success-card" aria-live="polite" aria-hidden="true" hidden>
+      <div class="success-icon">🎉</div>
+      <h2 class="success-title">¡Muchas gracias por participar!</h2>
+      <p class="success-body">
+        Hemos recibido vuestras respuestas. Vuestra confianza y colaboración
+        son la base de una educación bonita y llena de cariño. ¡Hasta pronto! 💜
+      </p>
+      <button class="reset-btn" id="reset-btn" type="button">Rellenar de nuevo</button>
+    </div>
+
+    <!-- ── FOOTER ── -->
+    <footer class="site-footer" role="contentinfo">
+      <p>Educación Infantil · Curso 2025–2026</p>
+      <p class="footer-heart">Hecho con 💜 para nuestras familias</p>
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
