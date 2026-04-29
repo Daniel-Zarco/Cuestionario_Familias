@@ -123,14 +123,28 @@
 
   // --- Show success screen ---
   function showSuccess() {
+    form.style.transition = 'opacity 0.45s ease, transform 0.45s ease';
     form.style.opacity = '0';
-    form.style.transition = 'opacity 0.4s ease';
+    form.style.transform = 'translateY(12px)';
+
     setTimeout(function () {
       form.hidden = true;
+
       successCard.hidden = false;
       successCard.removeAttribute('aria-hidden');
-      successCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }, 400);
+
+      successCard.style.opacity = '0';
+      successCard.style.transform = 'translateY(16px)';
+      successCard.style.transition = 'opacity 0.55s ease, transform 0.55s ease';
+
+      window.scrollTo(0, 0);
+      document.body.style.overflow = 'hidden';
+
+      requestAnimationFrame(function () {
+        successCard.style.opacity = '1';
+        successCard.style.transform = 'translateY(0)';
+      });
+    }, 450);
   }
 
   // --- Send data to Google Sheets ---
@@ -181,6 +195,9 @@
 
   // --- Reset ---
   resetBtn.addEventListener('click', function () {
+
+    document.body.style.overflow = 'auto';
+
     form.reset();
     textarea1.value = '';
     textarea2.value = '';
@@ -194,6 +211,8 @@
     submitBtn.querySelector('.submit-text').textContent = 'Enviar cuestionario';
     submitBtn.querySelector('.submit-icon').textContent = '\uD83D\uDC9C';
 
+    successCard.style.opacity = '0';
+    successCard.style.transform = 'translateY(16px)';
     successCard.hidden = true;
     successCard.setAttribute('aria-hidden', 'true');
     form.hidden = false;
