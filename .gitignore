@@ -1,0 +1,23 @@
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# Temporales
+*.tmp
+*.swp
+
+# Variables sensibles (por si en el futuro usas)
+.env
+
+# Apps Script (no hace falta subirlo)
+apps_script.gs
+
+# SetUp
+SETUP.md
